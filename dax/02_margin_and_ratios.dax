@@ -1,0 +1,43 @@
+// ==============================================================================
+// DAX MEASURES: Profit Margins & Key Ratios
+// ==============================================================================
+// BEST PRACTICE:
+// Format percentage measures with the '%' format (e.g., 2 decimals: 0.00%).
+// Always use DIVIDE(Numerator, Denominator, AlternateResult) instead of '/'
+// to prevent divide-by-zero errors.
+// ==============================================================================
+
+// 1. Profit Margin %
+// Percentage of revenue that is converted into profit
+Profit Margin % = 
+DIVIDE(
+    [Total Profit], 
+    [Total Revenue], 
+    0
+)
+
+
+// 2. Average Discount %
+// Weighted average discount rate given across all revenue
+Average Discount % = 
+AVERAGE(fact_sales[Discount])
+
+
+// 3. Profit Per Unit Sold
+// Average dollar profit earned on each individual unit
+Profit Per Unit = 
+DIVIDE(
+    [Total Profit], 
+    [Total Units Sold], 
+    0
+)
+
+
+// 4. Return on Cost % (Markup %)
+// Percentage profit generated relative to inventory cost
+Return on Cost % = 
+DIVIDE(
+    [Total Profit], 
+    [Total Cost], 
+    0
+)

@@ -1,0 +1,62 @@
+// ==============================================================================
+// DAX MEASURES: Core KPI Metrics
+// ==============================================================================
+// BEST PRACTICE:
+// Store all explicit measures in a dedicated "_Measures" table.
+// Format currencies as "$#,##0" or "$#,##0.00" and quantities as "#,##0".
+// ==============================================================================
+
+// 1. Total Revenue
+// Sums the revenue across all line items
+Total Revenue = 
+SUM(fact_sales[Revenue])
+
+
+// 2. Total Cost
+// Sums product standard costs across all sold line items
+Total Cost = 
+SUM(fact_sales[TotalCost])
+
+
+// 3. Total Profit
+// Net profit after deducting product cost from revenue
+Total Profit = 
+[Total Revenue] - [Total Cost]
+
+
+// 4. Total Units Sold
+// Total quantity of items purchased
+Total Units Sold = 
+SUM(fact_sales[Quantity])
+
+
+// 5. Total Orders
+// Counts distinct order transactions (orders with multiple items count once)
+Total Orders = 
+DISTINCTCOUNT(fact_sales[OrderID])
+
+
+// 6. Total Customers
+// Unique count of customers who have made purchases
+Total Customers = 
+DISTINCTCOUNT(fact_sales[CustomerID])
+
+
+// 7. Average Order Value (AOV)
+// Average dollar value generated per order
+Average Order Value = 
+DIVIDE(
+    [Total Revenue], 
+    [Total Orders], 
+    0
+)
+
+
+// 8. Average Order Quantity
+// Average number of units purchased per order
+Average Units Per Order = 
+DIVIDE(
+    [Total Units Sold], 
+    [Total Orders], 
+    0
+)

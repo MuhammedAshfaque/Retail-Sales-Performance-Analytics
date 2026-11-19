@@ -1,0 +1,19 @@
+ProductID,ProductName,Category,SubCategory,StandardCost,ListPrice
+PROD-001,UltraBook Pro 15,Technology,Laptops,750.0,1199.99
+PROD-002,Wireless Ergonomic Mouse,Technology,Accessories,15.0,39.99
+PROD-003,Mechanical Gaming Keyboard,Technology,Accessories,40.0,89.99
+PROD-004,"4K Ultra HD 27"" Monitor",Technology,Monitors,180.0,329.99
+PROD-005,Noise-Cancelling Headphones,Technology,Audio,90.0,199.99
+PROD-006,Smart Laser Printer,Technology,Printers,140.0,249.99
+PROD-007,Ergonomic Office Chair,Furniture,Chairs,110.0,229.99
+PROD-008,Height-Adjustable Standing Desk,Furniture,Desks,200.0,449.99
+PROD-009,3-Drawer Mobile File Cabinet,Furniture,Storage,65.0,139.99
+PROD-010,LED Desk Lamp with USB Port,Furniture,Furnishings,18.0,44.99
+PROD-011,Conference Table (Seats 8),Furniture,Tables,350.0,799.99
+PROD-012,Executive Bookcase 5-Shelf,Furniture,Bookcases,120.0,259.99
+PROD-013,Multi-Purpose Copy Paper (500ct),Office Supplies,Paper,4.5,9.99
+PROD-014,Heavy-Duty Desktop Stapler,Office Supplies,Fasteners,7.0,18.99
+PROD-015,Gel Ink Pens (Pack of 12),Office Supplies,Art & Pens,3.0,8.49
+PROD-016,Expanding Accordion File Folder,Office Supplies,Storage,5.5,14.99
+PROD-017,Dry Erase Whiteboard 36x24,Office Supplies,Supplies,22.0,54.99
+PROD-018,Sticky Notes Value Pack (12ct),Office Supplies,Paper,4.0,11.49

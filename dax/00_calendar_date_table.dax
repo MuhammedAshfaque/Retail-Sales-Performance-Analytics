@@ -1,0 +1,46 @@
+// ==============================================================================
+// DAX SCRIPT: Dedicated Calendar Date Table
+// ==============================================================================
+// PURPOSE:
+// In Power BI, time intelligence functions (YTD, Prior Year, YoY Growth) require
+// a dedicated Date table with contiguous dates and no missing days.
+//
+// HOW TO USE IN POWER BI DESKTOP:
+// 1. Go to "Modeling" tab in the top ribbon.
+// 2. Click "New Table".
+// 3. Paste the code below into the formula bar and press Enter.
+// 4. Mark as Date Table: Right-click the new "Dim_Date" table -> Mark as date table -> Select "Date" column.
+// 5. In "Model View", drag 'Dim_Date'[Date] to 'fact_sales'[OrderDate] (1-to-many relationship).
+// ==============================================================================
+
+Dim_Date = 
+VAR MinYear = 2023
+VAR MaxYear = 2024
+VAR BaseCalendar = CALENDAR(DATE(MinYear, 1, 1), DATE(MaxYear, 12, 31))
+
+RETURN
+    ADDCOLUMNS(
+        BaseCalendar,
+        "Year", YEAR([Date]),
+        "Year Quarter", "Q" & FORMAT([Date], "Q") & " " & YEAR([Date]),
+        "Quarter", "Q" & FORMAT([Date], "Q"),
+        "Quarter Number", QUARTER([Date]),
+        "Month Number", MONTH([Date]),
+        "Month Name", FORMAT([Date], "MMMM"),
+        "Month Short", FORMAT([Date], "MMM"),
+        "Year Month", FORMAT([Date], "YYYY-MM"),
+        "Month Year Short", FORMAT([Date], "MMM YYYY"),
+        "Month Year Sort", YEAR([Date]) * 100 + MONTH([Date]),
+        "Day of Month", DAY([Date]),
+        "Day of Week Number", WEEKDAY([Date], 2), // Monday = 1, Sunday = 7
+        "Day Name", FORMAT([Date], "dddd"),
+        "Day Short", FORMAT([Date], "ddd"),
+        "Is Weekend", IF(WEEKDAY([Date], 2) >= 6, "Weekend", "Weekday")
+    )
+
+// IMPORTANT TIP FOR BEGINNERS:
+// To ensure months display chronologically (Jan, Feb, Mar...) instead of alphabetically:
+// 1. Select the "Month Short" column in the Fields pane.
+// 2. Go to the "Column Tools" tab in the ribbon.
+// 3. Click "Sort by Column" -> Choose "Month Number".
+// 4. Select "Month Year Short" -> Click "Sort by Column" -> Choose "Month Year Sort".

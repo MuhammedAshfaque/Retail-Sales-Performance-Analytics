@@ -1,0 +1,41 @@
+// ==============================================================================
+// DAX MEASURES: Ranking, Contribution & Advanced Filtering
+// ==============================================================================
+
+// 1. % Contribution to Total Revenue (Ignores current row filter on products/categories)
+// Useful in a bar chart or matrix to show how much each category represents of total company sales
+% of Total Revenue = 
+DIVIDE(
+    [Total Revenue],
+    CALCULATE([Total Revenue], ALL(fact_sales)),
+    0
+)
+
+
+// 2. % Contribution to Selected Slicers (Respects external page filters)
+// ALLSELECTED removes filters from the visual rows but respects slicers on the page
+% of Sliced Revenue = 
+DIVIDE(
+    [Total Revenue],
+    CALCULATE([Total Revenue], ALLSELECTED(fact_sales)),
+    0
+)
+
+
+// 3. Product Rank by Revenue
+// Ranks products from highest revenue (1) to lowest
+Product Revenue Rank = 
+RANKX(
+    ALLSELECTED(dim_products[ProductName]),
+    [Total Revenue],
+    ,
+    DESC,
+    Dense
+)
+
+
+// 4. Dynamic Title for Visuals (Changes according to Selected Region)
+Selected Region Title = 
+VAR SelectedRegion = SELECTEDVALUE(dim_regions[RegionName], "All Regions")
+RETURN
+    "Sales & Profit Performance - " & SelectedRegion

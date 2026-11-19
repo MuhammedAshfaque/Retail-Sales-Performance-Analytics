@@ -1,0 +1,21 @@
+CustomerID,CustomerName,Segment,City,State,Country,PostalCode
+CUST-1001,Emma Watson,Consumer,New York,New York,USA,10001
+CUST-1002,Liam Smith,Corporate,Los Angeles,California,USA,90001
+CUST-1003,Olivia Johnson,Home Office,Chicago,Illinois,USA,60601
+CUST-1004,Noah Brown,Consumer,Houston,Texas,USA,77001
+CUST-1005,Ava Davis,Corporate,Phoenix,Arizona,USA,85001
+CUST-1006,William Miller,Home Office,Philadelphia,Pennsylvania,USA,19101
+CUST-1007,Sophia Wilson,Consumer,San Antonio,Texas,USA,78201
+CUST-1008,James Moore,Corporate,San Diego,California,USA,92101
+CUST-1009,Isabella Taylor,Consumer,Dallas,Texas,USA,75201
+CUST-1010,Benjamin Anderson,Corporate,Austin,Texas,USA,73301
+CUST-1011,Mia Thomas,Home Office,Jacksonville,Florida,USA,32099
+CUST-1012,Elijah Jackson,Consumer,San Francisco,California,USA,94102
+CUST-1013,Charlotte White,Corporate,Seattle,Washington,USA,98101
+CUST-1014,Lucas Harris,Home Office,Denver,Colorado,USA,80201
+CUST-1015,Amelia Martin,Consumer,Boston,Massachusetts,USA,02108
+CUST-1016,Mason Thompson,Corporate,Miami,Florida,USA,33101
+CUST-1017,Harper Garcia,Consumer,Atlanta,Georgia,USA,30301
+CUST-1018,Ethan Martinez,Home Office,Detroit,Michigan,USA,48201
+CUST-1019,Evelyn Robinson,Corporate,Minneapolis,Minnesota,USA,55401
+CUST-1020,Oliver Clark,Consumer,Portland,Oregon,USA,97201
